@@ -11,16 +11,16 @@ class SensorTransmissionEnv(gym.Env):
         super().__init__()
 
         # System parameters given from assignment
-        self.lam = 0.1
-        self.B = 10
-        self.eta = 2
-        self.Delta = 3
+        self.lam = 0.1 #probability of success
+        self.B = 10 #max battery
+        self.eta = 2 #minimum energy req
+        self.Delta = 3 #max solar energy
 
         # Pollution space: {0, 0.02, ..., 0.98, 1}
         self.num_pollution_states = 51
         self.pollution_values = np.linspace(0.0, 1.0, self.num_pollution_states)
 
-        # Load transition matrix and solar probability vector
+        # Load transition matrix and solar probability vector .npy files
         base_path = Path(__file__).resolve().parent if "__file__" in globals() else Path.cwd()
 
         self.P = np.load(base_path / "air.npy").astype(np.float64)

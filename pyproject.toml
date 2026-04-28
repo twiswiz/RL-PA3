@@ -1,0 +1,12 @@
+[project]
+name = "rl-pa3"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "gymnasium>=1.3.0",
+    "matplotlib>=3.10.9",
+    "numpy>=2.4.4",
+    "torch>=2.11.0",
+]
